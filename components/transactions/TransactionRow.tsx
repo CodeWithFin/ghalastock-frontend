@@ -18,7 +18,7 @@ export function TransactionRow({
   onUndo,
 }: TransactionRowProps) {
   return (
-    <tr className="border-b border-border last:border-0 hover:bg-surface/50 transition-colors">
+    <tr className="border-b border-border last:border-0 hover:bg-white/5 transition-colors">
       <td className="px-4 py-3">
         <StatusBadge variant={transaction.type === "IN" ? "success" : "warning"}>
           {transaction.type}

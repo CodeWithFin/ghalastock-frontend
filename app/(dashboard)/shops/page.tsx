@@ -95,7 +95,7 @@ export default function ShopsPage() {
           ))}
         </div>
       ) : error ? (
-        <div className="rounded-lg border border-red-200 bg-red-50 p-6 text-center">
+        <div className="error-panel">
           <p className="text-sm text-danger">{error.message}</p>
           <Button variant="outline" onClick={() => refetch()} className="mt-4">
             Try again
@@ -114,7 +114,7 @@ export default function ShopsPage() {
           {shops.map((shop) => (
             <div
               key={shop.id}
-              className="rounded-lg border border-border bg-surface-raised p-5"
+              className="rounded-lg border border-border bg-card p-5"
             >
               <div className="flex items-start justify-between">
                 <div>

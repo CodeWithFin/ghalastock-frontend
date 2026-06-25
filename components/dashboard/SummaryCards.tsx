@@ -17,9 +17,9 @@ interface SummaryCardProps {
 }
 
 const variantStyles = {
-  primary: "text-primary bg-primary-muted",
-  warning: "text-warning bg-amber-50",
-  danger: "text-danger bg-red-50",
+  primary: "text-landing-accent bg-landing-accent/10",
+  warning: "text-amber-400 bg-amber-950/40",
+  danger: "text-red-400 bg-red-950/40",
 };
 
 function SummaryCard({ title, value, icon: Icon, variant }: SummaryCardProps) {
@@ -28,10 +28,10 @@ function SummaryCard({ title, value, icon: Icon, variant }: SummaryCardProps) {
       <CardContent className="p-6">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm text-muted">{title}</p>
-            <p className="text-3xl font-semibold mt-1">{value}</p>
+            <p className="text-sm text-landing-muted font-light">{title}</p>
+            <p className="text-3xl font-medium mt-1">{value}</p>
           </div>
-          <div className={cn("rounded-lg p-3", variantStyles[variant])}>
+          <div className={cn("rounded-2xl p-3", variantStyles[variant])}>
             <Icon className="h-6 w-6" />
           </div>
         </div>

@@ -46,7 +46,7 @@ export function FEFOPreview({ preview, loading }: FEFOPreviewProps) {
         {preview.map((line) => (
           <div
             key={line.itemId}
-            className="rounded-md border border-border bg-surface-raised p-3"
+            className="rounded-md border border-border bg-card p-3"
           >
             <div className="flex items-center justify-between">
               <p className="text-sm font-medium">{line.itemName}</p>

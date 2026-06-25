@@ -76,7 +76,7 @@ export function Topbar({ title }: TopbarProps) {
 
   return (
     <>
-      <header className="sticky top-0 z-40 flex h-16 items-center gap-4 border-b border-border bg-surface-raised px-4 md:px-6">
+      <header className="sticky top-0 z-40 flex h-16 items-center gap-4 border-b border-landing-border bg-card/80 backdrop-blur-md px-4 md:px-6">
         {title && (
           <h1 className="text-lg font-semibold text-foreground shrink-0 hidden sm:block">
             {title}
@@ -90,7 +90,7 @@ export function Topbar({ title }: TopbarProps) {
             placeholder="Search items by name or SKU..."
           />
           {debouncedSearch && searchResults?.items && searchResults.items.length > 0 && (
-            <div className="absolute top-full left-0 right-0 mt-1 rounded-lg border border-border bg-surface-raised shadow-lg z-50">
+            <div className="absolute top-full left-0 right-0 mt-1 rounded-lg border border-landing-border bg-card shadow-lg z-50">
               {searchResults.items.map((item) => (
                 <button
                   key={item.id}
@@ -98,7 +98,7 @@ export function Topbar({ title }: TopbarProps) {
                     router.push("/items");
                     setSearch("");
                   }}
-                  className="w-full px-4 py-2 text-left text-sm hover:bg-surface transition-colors"
+                  className="w-full px-4 py-2 text-left text-sm hover:bg-white/5 transition-colors"
                 >
                   <span className="font-medium">{item.name}</span>
                   {item.sku && (

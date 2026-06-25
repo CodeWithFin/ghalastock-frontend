@@ -14,14 +14,15 @@
     --color-primary-muted: #b7e4c7;
     --color-accent: #f59e0b;
     --color-accent-light: #fde68a;
-    --color-surface: #f9fafb;
-    --color-surface-raised: #ffffff;
-    --color-border: #e5e7eb;
-    --color-foreground: #111827;
-    --color-muted: #6b7280;
-    --color-danger: #dc2626;
-    --color-warning: #d97706;
-    --color-success: #16a34a;
+    --color-surface: #080805;
+    --color-surface-raised: #121212;
+    --color-surface-hover: #1a1a1a;
+    --color-border: #2a2a2a;
+    --color-foreground: #ffffff;
+    --color-muted: #888888;
+    --color-danger: #ef4444;
+    --color-warning: #f59e0b;
+    --color-success: #22c55e;
 
     --color-background: #080805;
     --color-card: #121212;
@@ -40,8 +41,9 @@
   }
 
   body {
-    @apply bg-surface text-foreground antialiased;
+    @apply bg-background text-foreground font-figtree antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
@@ -53,7 +55,20 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
+  .error-panel {
+    @apply rounded-lg border border-red-900/50 bg-red-950/30 p-4 text-center text-sm text-red-400;
+  }
+
   .safe-area-pb {
     padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

@@ -97,7 +97,7 @@ export default function SignupPage() {
           </div>
 
           {error && (
-            <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-danger">
+            <p className="rounded-lg border border-red-900/50 bg-red-950/30 px-3 py-2 text-sm text-red-400">
               {error}
             </p>
           )}
@@ -109,7 +109,7 @@ export default function SignupPage() {
 
         <p className="mt-6 text-center text-sm text-muted">
           Already have an account?{" "}
-          <Link href="/login" className="text-primary hover:underline">
+          <Link href="/login" className="text-landing-accent hover:underline">
             Sign in
           </Link>
         </p>

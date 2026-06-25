@@ -47,13 +47,16 @@ export function Sidebar() {
   return (
     <aside
       className={cn(
-        "hidden md:flex flex-col border-r border-border bg-surface-raised transition-all duration-200 h-screen sticky top-0",
+        "hidden md:flex flex-col border-r border-landing-border bg-card transition-all duration-200 h-screen sticky top-0",
         collapsed ? "w-16" : "w-60"
       )}
     >
-      <div className="flex items-center justify-between p-4 border-b border-border">
+      <div className="flex items-center justify-between p-4 border-b border-landing-border">
         {!collapsed && (
-          <Link href="/dashboard" className="font-semibold text-primary text-lg">
+          <Link
+            href="/dashboard"
+            className="font-medium text-lg uppercase tracking-tighter text-foreground"
+          >
             Ghala
           </Link>
         )}
@@ -72,10 +75,10 @@ export function Sidebar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-light transition-colors",
                   active
-                    ? "bg-primary text-white"
-                    : "text-muted hover:bg-surface hover:text-foreground",
+                    ? "bg-landing-accent/15 text-landing-accent border border-landing-accent/20"
+                    : "text-landing-muted hover:bg-white/5 hover:text-foreground",
                   collapsed && "justify-center px-2"
                 )}
                 title={collapsed ? item.label : undefined}
@@ -87,7 +90,7 @@ export function Sidebar() {
           })}
       </nav>
 
-      <div className="border-t border-border p-4 space-y-3">
+      <div className="border-t border-landing-border p-4 space-y-3">
         {!collapsed && org && (
           <div>
             <p className="text-sm font-medium truncate">{org.name}</p>
@@ -97,13 +100,13 @@ export function Sidebar() {
           </div>
         )}
         {!collapsed && user && (
-          <p className="text-xs text-muted truncate">{user.email}</p>
+          <p className="text-xs text-landing-muted truncate">{user.email}</p>
         )}
         <Button
           variant="ghost"
           size={collapsed ? "icon" : "default"}
           onClick={handleLogout}
-          className={cn("w-full text-muted", !collapsed && "justify-start")}
+          className={cn("w-full text-landing-muted", !collapsed && "justify-start")}
         >
           <LogOut className="h-4 w-4" />
           {!collapsed && <span className="ml-2">Logout</span>}

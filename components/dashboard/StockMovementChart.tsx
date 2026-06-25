@@ -37,25 +37,32 @@ export function StockMovementChart({ data, loading }: StockMovementChartProps) {
       <CardContent>
         <ResponsiveContainer width="100%" height={280}>
           <AreaChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
-            <XAxis dataKey="label" tick={{ fontSize: 11 }} />
-            <YAxis tick={{ fontSize: 11 }} />
-            <Tooltip />
+            <CartesianGrid strokeDasharray="3 3" stroke="#2A2A2A" />
+            <XAxis dataKey="label" tick={{ fontSize: 11, fill: "#888888" }} />
+            <YAxis tick={{ fontSize: 11, fill: "#888888" }} />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: "#121212",
+                border: "1px solid #2A2A2A",
+                borderRadius: "8px",
+                color: "#fff",
+              }}
+            />
             <Legend />
             <Area
               type="monotone"
               dataKey="in"
               name="Stock In"
-              stroke="#16A34A"
-              fill="#B7E4C7"
+              stroke="#D4D414"
+              fill="rgba(212,212,20,0.15)"
               strokeWidth={2}
             />
             <Area
               type="monotone"
               dataKey="out"
               name="Stock Out"
-              stroke="#F59E0B"
-              fill="#FDE68A"
+              stroke="#888888"
+              fill="rgba(136,136,136,0.1)"
               strokeWidth={2}
             />
           </AreaChart>

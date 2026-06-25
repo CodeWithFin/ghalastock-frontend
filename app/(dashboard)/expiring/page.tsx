@@ -10,14 +10,9 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { useExpiringBatches } from "@/lib/hooks/useStock";
 import { useDebounce } from "@/lib/hooks/useDebounce";
 import { formatDate, formatNumber } from "@/lib/utils/format";
+import { expiryRowClass } from "@/lib/utils/stock";
 import { cn } from "@/lib/utils/cn";
 import { AlertTriangle } from "lucide-react";
-
-function urgencyClass(days: number) {
-  if (days <= 7) return "border-red-200 bg-red-50";
-  if (days <= 30) return "border-amber-200 bg-amber-50";
-  return "border-border";
-}
 
 export default function ExpiringPage() {
   const [search, setSearch] = useState("");
@@ -66,7 +61,7 @@ export default function ExpiringPage() {
           ))}
         </div>
       ) : error ? (
-        <div className="rounded-lg border border-red-200 bg-red-50 p-6 text-center">
+        <div className="error-panel">
           <p className="text-sm text-danger">{error.message}</p>
           <Button variant="outline" onClick={() => refetch()} className="mt-4">
             Try again
@@ -85,7 +80,7 @@ export default function ExpiringPage() {
               key={batch.id}
               className={cn(
                 "rounded-lg border p-4",
-                urgencyClass(batch.daysRemaining)
+                expiryRowClass(batch.daysRemaining)
               )}
             >
               <div className="flex items-start justify-between gap-4">
@@ -103,10 +98,10 @@ export default function ExpiringPage() {
                   className={cn(
                     "shrink-0 rounded-md px-2 py-1 text-xs font-medium",
                     batch.daysRemaining <= 7
-                      ? "bg-red-100 text-danger"
+                      ? "bg-red-950/50 text-red-400 border border-red-900/50"
                       : batch.daysRemaining <= 30
-                        ? "bg-amber-100 text-warning"
-                        : "bg-surface text-muted"
+                        ? "bg-amber-950/50 text-amber-400 border border-amber-900/50"
+                        : "bg-surface-hover text-landing-muted border border-landing-border"
                   )}
                 >
                   {batch.daysRemaining} days left

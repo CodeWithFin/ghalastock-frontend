@@ -27,6 +27,7 @@ const jetbrains = JetBrains_Mono({
 
 const figtree = Figtree({
   subsets: ["latin"],
+  weight: ["300", "400", "500"],
   variable: "--font-figtree",
 });
 
@@ -44,9 +45,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} ${jetbrains.variable} ${figtree.variable}`}
+      className={`dark ${inter.variable} ${playfair.variable} ${jetbrains.variable} ${figtree.variable}`}
     >
-      <body className="font-sans">
+      <body className="font-figtree selection:bg-landing-accent selection:text-background">
         <QueryProvider>
           <AuthHydrator>
             {children}
