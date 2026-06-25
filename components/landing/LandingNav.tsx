@@ -34,9 +34,6 @@ export function LandingNav() {
         <a href="#how-it-works" className="text-sm font-light hover:text-white/70 transition-colors">
           How it works
         </a>
-        <a href="/pricing" className="text-sm font-light hover:text-white/70 transition-colors">
-          Pricing
-        </a>
         <div className="text-white/20">|</div>
         <a href="/login" className="text-sm font-light hover:text-white/70 transition-colors">
           Login

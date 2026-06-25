@@ -89,7 +89,6 @@ services:
 | Route | Description |
 |-------|-------------|
 | `/` | Marketing landing page |
-| `/pricing` | Pricing tiers |
 
 ### Auth
 
@@ -118,7 +117,7 @@ services:
 
 ```
 app/
-├── (public)/          # Landing and pricing
+├── (public)/          # Landing pages
 ├── (auth)/            # Login, signup, invite
 ├── (dashboard)/       # Protected inventory app
 components/
