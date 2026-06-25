@@ -40,6 +40,40 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## Backend integration
+
+The frontend talks to [ghalastock-backend](https://github.com/CodeWithFin/ghalastock-backend) at `NEXT_PUBLIC_API_URL`.
+
+### Run both apps locally
+
+```bash
+# Terminal 1 — API (from ghalastock-backend repo)
+cd ../ghalastock-backend
+cp .env.example .env
+docker compose -f docker/docker-compose.yml up postgres -d
+npm install && npm run migrate && npm run seed
+npm run dev
+
+# Terminal 2 — Frontend
+cd ghalastock-frontend
+cp .env.local.example .env.local
+npm install
+npm run dev
+```
+
+Default seed login: `admin@acme.com` / `password123`
+
+### How requests are mapped
+
+- JWT is sent as `Authorization: Bearer <token>` on every API call
+- API responses in snake_case are converted to camelCase in `lib/api/transform.ts`
+- Stock in/out payloads map `lines` → `items` and `notes` → `globalNotes`
+- Item fields map `minStock` → `min_stock` when saving
+- Transaction undo uses `DELETE /transactions/:id` (admin only)
+- Dashboard composes extra data (low stock list, expiry alerts, movement chart) from multiple API calls
+
+Set `APP_URL=http://localhost:3000` in the backend `.env` so CORS allows the browser in production mode.
+
 ## Environment Variables
 
 | Variable | Description | Default |
