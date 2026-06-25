@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: "Inter", sans-serif;
+    --font-playfair: "Playfair Display", serif;
+    --font-jetbrains: "JetBrains Mono", monospace;
+    --font-figtree: "Figtree", sans-serif;
+
+    --color-primary: #1b4332;
+    --color-primary-light: #2d6a4f;
+    --color-primary-muted: #b7e4c7;
+    --color-accent: #f59e0b;
+    --color-accent-light: #fde68a;
+    --color-surface: #f9fafb;
+    --color-surface-raised: #ffffff;
+    --color-border: #e5e7eb;
+    --color-foreground: #111827;
+    --color-muted: #6b7280;
+    --color-danger: #dc2626;
+    --color-warning: #d97706;
+    --color-success: #16a34a;
+
+    --color-background: #080805;
+    --color-card: #121212;
+    --color-card-foreground: #ffffff;
+    --color-landing-border: #2a2a2a;
+    --color-landing-muted: #888888;
+    --color-landing-accent: #d4d414;
+
+    --radius-lg: 8px;
+    --radius-md: 6px;
+    --radius-sm: 4px;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-surface text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .safe-area-pb {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
