@@ -67,7 +67,7 @@ export default function UsersPage() {
             {invites.map((invite) => (
               <div
                 key={invite.id}
-                className="flex items-center justify-between rounded-lg border border-border bg-surface-raised px-4 py-3"
+                className="flex items-center justify-between rounded-lg border border-border bg-card px-4 py-3"
               >
                 <div className="flex items-center gap-3">
                   <Mail className="h-4 w-4 text-muted" />

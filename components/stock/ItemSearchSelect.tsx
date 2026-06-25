@@ -55,7 +55,7 @@ export function ItemSearchSelect({
       />
 
       {open && (debouncedSearch || !value) && (
-        <div className="absolute top-full z-50 mt-1 max-h-60 w-full overflow-auto rounded-lg border border-border bg-surface-raised shadow-lg">
+        <div className="absolute top-full z-50 mt-1 max-h-60 w-full overflow-auto rounded-lg border border-border bg-card shadow-lg">
           {isLoading ? (
             <div className="flex items-center justify-center p-4 text-muted">
               <Loader2 className="h-4 w-4 animate-spin" />
@@ -84,7 +84,7 @@ export function ItemSearchSelect({
                 </div>
                 <div className="flex items-center gap-2 text-xs text-muted">
                   <span>{item.totalStock} {item.unit}</span>
-                  {value === item.id && <Check className="h-3 w-3 text-primary" />}
+                  {value === item.id && <Check className="h-3 w-3 text-landing-accent" />}
                 </div>
               </button>
             ))

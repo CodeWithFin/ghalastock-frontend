@@ -19,15 +19,15 @@ interface ExpiryAlertsProps {
 }
 
 function urgencyClass(days: number) {
-  if (days <= 7) return "border-red-200 bg-red-50";
-  if (days <= 30) return "border-amber-200 bg-amber-50";
-  return "border-border";
+  if (days <= 7) return "border-red-900/50 bg-red-950/30";
+  if (days <= 30) return "border-amber-900/50 bg-amber-950/30";
+  return "border-landing-border";
 }
 
 function urgencyTextClass(days: number) {
-  if (days <= 7) return "text-danger";
-  if (days <= 30) return "text-warning";
-  return "text-muted";
+  if (days <= 7) return "text-red-400";
+  if (days <= 30) return "text-amber-400";
+  return "text-landing-muted";
 }
 
 export function ExpiryAlerts({ alerts, loading }: ExpiryAlertsProps) {
@@ -48,13 +48,10 @@ export function ExpiryAlerts({ alerts, loading }: ExpiryAlertsProps) {
             {alerts.map((alert) => (
               <li
                 key={alert.id}
-                className={cn(
-                  "rounded-lg border p-3",
-                  urgencyClass(alert.daysRemaining)
-                )}
+                className={cn("rounded-lg border p-3", urgencyClass(alert.daysRemaining))}
               >
                 <p className="text-sm font-medium">{alert.itemName}</p>
-                <p className="text-xs text-muted mt-1">
+                <p className="text-xs text-landing-muted mt-1 font-light">
                   {alert.quantity} units · Expires {formatDate(alert.expiryDate)}
                 </p>
                 <p className={cn("text-xs font-medium mt-1", urgencyTextClass(alert.daysRemaining))}>

@@ -47,7 +47,7 @@ export function MobileNav() {
 
   return (
     <>
-      <nav className="md:hidden fixed bottom-0 inset-x-0 z-50 border-t border-border bg-surface-raised safe-area-pb">
+      <nav className="md:hidden fixed bottom-0 inset-x-0 z-50 border-t border-landing-border bg-card/95 backdrop-blur-md safe-area-pb">
         <div className="flex items-center justify-around h-16">
           {mainTabs.map((tab) => {
             const active = pathname.startsWith(tab.href);
@@ -56,8 +56,8 @@ export function MobileNav() {
                 key={tab.href}
                 href={tab.href}
                 className={cn(
-                  "flex flex-col items-center gap-1 px-2 py-1 text-[10px] font-medium transition-colors",
-                  active ? "text-primary" : "text-muted"
+                  "flex flex-col items-center gap-1 px-2 py-1 text-[10px] font-light transition-colors",
+                  active ? "text-landing-accent" : "text-landing-muted"
                 )}
               >
                 <tab.icon className="h-5 w-5" />
@@ -67,7 +67,7 @@ export function MobileNav() {
           })}
           <button
             onClick={() => setMobileNavOpen(true)}
-            className="flex flex-col items-center gap-1 px-2 py-1 text-[10px] font-medium text-muted"
+            className="flex flex-col items-center gap-1 px-2 py-1 text-[10px] font-light text-landing-muted"
           >
             <MoreHorizontal className="h-5 w-5" />
             More
@@ -76,7 +76,7 @@ export function MobileNav() {
       </nav>
 
       <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
-        <SheetContent side="bottom" className="rounded-t-2xl">
+        <SheetContent side="bottom" className="rounded-t-2xl bg-card border-landing-border">
           <SheetHeader>
             <SheetTitle>More</SheetTitle>
           </SheetHeader>
@@ -88,10 +88,10 @@ export function MobileNav() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileNavOpen(false)}
-                  className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-surface transition-colors"
+                  className="flex flex-col items-center gap-2 p-4 rounded-2xl hover:bg-white/5 transition-colors"
                 >
-                  <item.icon className="h-6 w-6 text-primary" />
-                  <span className="text-xs font-medium">{item.label}</span>
+                  <item.icon className="h-6 w-6 text-landing-accent" />
+                  <span className="text-xs font-light">{item.label}</span>
                 </Link>
               ))}
           </div>

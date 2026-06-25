@@ -21,7 +21,7 @@ export function ItemRow({ item, canEdit, onEdit, onDelete }: ItemRowProps) {
 
   return (
     <>
-      <tr className="border-b border-border last:border-0 hover:bg-surface/50 transition-colors">
+      <tr className="border-b border-border last:border-0 hover:bg-white/5 transition-colors">
         <td className="px-4 py-3">
           <button
             type="button"
@@ -86,7 +86,7 @@ export function ItemRow({ item, canEdit, onEdit, onDelete }: ItemRowProps) {
       {expanded && hasBatches && (
         <tr className="bg-surface/30">
           <td colSpan={canEdit ? 7 : 6} className="px-4 py-3">
-            <div className="ml-6 rounded-lg border border-border bg-surface-raised p-4">
+            <div className="ml-6 rounded-lg border border-border bg-card p-4">
               <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">
                 Batch Breakdown
               </p>

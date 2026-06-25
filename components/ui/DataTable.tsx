@@ -57,7 +57,7 @@ export function DataTable<T>({
 
   if (error) {
     return (
-      <div className="rounded-lg border border-red-200 bg-red-50 p-6 text-center">
+      <div className="error-panel">
         <p className="text-sm text-danger">{error.message}</p>
         {onRetry && (
           <Button variant="outline" onClick={onRetry} className="mt-4">
@@ -78,7 +78,7 @@ export function DataTable<T>({
       <div className="hidden overflow-x-auto rounded-lg border border-border md:block">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-border bg-surface">
+            <tr className="border-b border-landing-border bg-surface-hover">
               {columns.map((col) => (
                 <th
                   key={col.key}
@@ -97,7 +97,7 @@ export function DataTable<T>({
               <tr
                 key={getRowKey(row)}
                 className={cn(
-                  "border-b border-border last:border-0 hover:bg-surface/50 transition-colors",
+                  "border-b border-border last:border-0 hover:bg-white/5 transition-colors",
                   getRowClassName?.(row)
                 )}
               >
@@ -118,7 +118,7 @@ export function DataTable<T>({
           <div
             key={getRowKey(row)}
             className={cn(
-              "rounded-lg border border-border bg-surface-raised p-4",
+              "rounded-lg border border-border bg-card p-4",
               getRowClassName?.(row)
             )}
           >

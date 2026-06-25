@@ -9,11 +9,11 @@ interface StatusBadgeProps {
 }
 
 const variants: Record<StatusVariant, string> = {
-  success: "bg-green-50 text-success border-green-200",
-  warning: "bg-amber-50 text-warning border-amber-200",
-  danger: "bg-red-50 text-danger border-red-200",
-  default: "bg-surface text-muted border-border",
-  primary: "bg-primary-muted text-primary border-primary/20",
+  success: "bg-green-950/50 text-green-400 border-green-800/50",
+  warning: "bg-amber-950/50 text-amber-400 border-amber-800/50",
+  danger: "bg-red-950/50 text-red-400 border-red-800/50",
+  default: "bg-surface-hover text-landing-muted border-landing-border",
+  primary: "bg-landing-accent/10 text-landing-accent border-landing-accent/30",
 };
 
 export function StatusBadge({ children, variant = "default", className }: StatusBadgeProps) {

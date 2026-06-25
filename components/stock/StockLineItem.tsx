@@ -43,7 +43,7 @@ export function StockLineItem({
   const lineErrors = errors.lines?.[index];
 
   return (
-    <div className="rounded-lg border border-border bg-surface-raised p-4">
+    <div className="rounded-lg border border-border bg-card p-4">
       <div className="mb-3 flex items-center justify-between">
         <span className="text-sm font-medium text-muted">Line {index + 1}</span>
         {canRemove && (

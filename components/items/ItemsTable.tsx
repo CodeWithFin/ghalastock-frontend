@@ -71,7 +71,7 @@ export function ItemsTable({
 
   if (error) {
     return (
-      <div className="rounded-lg border border-red-200 bg-red-50 p-6 text-center">
+      <div className="error-panel">
         <p className="text-sm text-danger">{error.message}</p>
         {onRetry && (
           <Button variant="outline" onClick={onRetry} className="mt-4">
@@ -97,7 +97,7 @@ export function ItemsTable({
       <div className="hidden overflow-x-auto rounded-lg border border-border md:block">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-border bg-surface">
+            <tr className="border-b border-landing-border bg-surface-hover">
               <th className="px-4 py-3 text-left font-medium text-muted">Item</th>
               <th className="hidden px-4 py-3 text-left font-medium text-muted md:table-cell">
                 Category
@@ -135,7 +135,7 @@ export function ItemsTable({
         {items.map((item) => (
           <div
             key={item.id}
-            className="rounded-lg border border-border bg-surface-raised p-4"
+            className="rounded-lg border border-border bg-card p-4"
           >
             <div className="flex items-start justify-between gap-2">
               <div>

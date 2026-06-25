@@ -36,7 +36,7 @@ function AcceptInviteForm() {
       <Card>
         <CardContent className="pt-6 text-center">
           <p className="text-danger">Invalid or missing invite link.</p>
-          <Link href="/login" className="mt-4 inline-block text-primary hover:underline">
+          <Link href="/login" className="mt-4 inline-block text-landing-accent hover:underline">
             Go to login
           </Link>
         </CardContent>
@@ -89,7 +89,7 @@ function AcceptInviteForm() {
           </div>
 
           {error && (
-            <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-danger">
+            <p className="rounded-lg border border-red-900/50 bg-red-950/30 px-3 py-2 text-sm text-red-400">
               {error}
             </p>
           )}

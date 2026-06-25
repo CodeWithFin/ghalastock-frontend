@@ -63,7 +63,7 @@ export function UsersTable({
 
   if (error) {
     return (
-      <div className="rounded-lg border border-red-200 bg-red-50 p-6 text-center">
+      <div className="error-panel">
         <p className="text-sm text-danger">{error.message}</p>
         {onRetry && (
           <Button variant="outline" onClick={onRetry} className="mt-4">
@@ -89,7 +89,7 @@ export function UsersTable({
       <div className="hidden overflow-x-auto rounded-lg border border-border md:block">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-border bg-surface">
+            <tr className="border-b border-landing-border bg-surface-hover">
               <th className="px-4 py-3 text-left font-medium text-muted">User</th>
               <th className="px-4 py-3 text-left font-medium text-muted">Role</th>
               <th className="hidden px-4 py-3 text-left font-medium text-muted md:table-cell">
@@ -109,7 +109,7 @@ export function UsersTable({
               return (
                 <tr
                   key={user.id}
-                  className="border-b border-border last:border-0 hover:bg-surface/50"
+                  className="border-b border-border last:border-0 hover:bg-white/5"
                 >
                   <td className="px-4 py-3">
                     <p className="font-medium">{user.name ?? user.email}</p>
@@ -143,8 +143,8 @@ export function UsersTable({
                     <span
                       className={
                         user.isActive
-                          ? "inline-flex items-center rounded-md border border-green-200 bg-green-50 px-2 py-0.5 text-xs font-medium text-success"
-                          : "inline-flex items-center rounded-md border border-border bg-surface px-2 py-0.5 text-xs font-medium text-muted"
+                          ? "inline-flex items-center rounded-md border border-green-800/50 bg-green-950/40 px-2 py-0.5 text-xs font-medium text-green-400"
+                          : "inline-flex items-center rounded-md border border-landing-border bg-surface-hover px-2 py-0.5 text-xs font-medium text-landing-muted"
                       }
                     >
                       {user.isActive ? "Active" : "Inactive"}
@@ -176,7 +176,7 @@ export function UsersTable({
         {users.map((user) => (
           <div
             key={user.id}
-            className="rounded-lg border border-border bg-surface-raised p-4"
+            className="rounded-lg border border-border bg-card p-4"
           >
             <div className="flex items-start justify-between">
               <div>
