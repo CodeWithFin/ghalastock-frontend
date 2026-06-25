@@ -15,7 +15,7 @@ export function CallToAction() {
       >
         <div className="absolute inset-0 bg-gradient-to-br from-primary-light/50 to-transparent" />
         <div className="relative z-10">
-          <h2 className="font-display text-3xl md:text-5xl text-white mb-4">
+          <h2 className="font-figtree text-3xl md:text-5xl text-white mb-4">
             Ready to take control of your stock?
           </h2>
           <p className="text-primary-muted text-lg mb-8 max-w-xl mx-auto">

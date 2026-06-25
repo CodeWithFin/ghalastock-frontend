@@ -27,6 +27,7 @@ const jetbrains = JetBrains_Mono({
 
 const figtree = Figtree({
   subsets: ["latin"],
+  weight: ["300", "400", "500"],
   variable: "--font-figtree",
 });
 

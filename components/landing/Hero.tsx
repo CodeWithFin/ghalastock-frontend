@@ -72,7 +72,7 @@ export function Hero() {
             className="max-w-2xl"
           >
             <Subheading text="Inventory Management" />
-            <h1 className="font-display text-5xl md:text-7xl font-medium tracking-tight leading-[1.1] mb-6 text-white">
+            <h1 className="font-figtree text-5xl md:text-7xl font-medium tracking-tighter leading-[1.1] mb-6 text-white">
               Your warehouse,
               <br />
               always in order.
